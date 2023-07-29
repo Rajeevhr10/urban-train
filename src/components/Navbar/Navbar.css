@@ -1,0 +1,7 @@
+.nav-item {
+  cursor: pointer;
+  border: 1px solid blue;
+  margin: 5px;
+  background-color: rgb(255, 140, 0);
+  box-sizing: border-box;
+}

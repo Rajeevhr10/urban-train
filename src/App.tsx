@@ -1,13 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [color, setColor] = useState("red");
+
+  const decrement = () => {
+    setCount((prevCount) => prevCount - 1);
+  };
 
   return (
-    <>
+    <div style={{ width: "100vw", backgroundColor: "yellow" }}>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -21,15 +26,21 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
+        <button onClick={decrement}>decrement</button>
+        <button
+          onClick={() => setColor((prev) => (prev === "red" ? "green" : "red"))}
+        >
+          Change color
+        </button>
         <p>
           Edit <code>src/App.tsx</code> to something
         </p>
       </div>
-      <p className="read-the-docs">
+      <p className="read-the-docs" style={{ backgroundColor: color }}>
         Click on the Vite and React logos to learn more
       </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
